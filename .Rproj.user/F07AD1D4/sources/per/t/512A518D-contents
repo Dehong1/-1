@@ -18,17 +18,3 @@ options()
 options()
 options()
 savehistory("myfile")
-options()
-options(digits=3)
-options(digits=3)
-x <- runif(20)
-summary(x)
-hist(x)
-Rsite.search(runif)
-RSiteSearch(runif)
-RSiteSearch("runif")
-example(runif)
-?runif
-?dev.off
-?cooks.distance
-?predict
