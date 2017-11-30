@@ -1,3 +1,6 @@
-.hljs {
-  padding: 1em;
+/* Sticker footer */
+.sticker {
+  display: flex;  /*弹性布局*/
+  height: 60vh; 
+  flex-direction: column;
 }
