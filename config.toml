@@ -1,208 +1,97 @@
-baseurl = "https://www.choyang.me/"
-title = "博客"
-copyright = "&copy; 2017 Hong De"
-theme = "hugo-academic"
+baseURL = "https://dehongblog.netlify.com/"
+LanguageCode = "zh-CN"
+HasCJKLanguage = true
+title = " DeHong.Website "
+theme = "hugo-nuo" 
+enableRobotsTXT = true
+pygmentsuseclasses = true
+PygmentsCodeFences = true
+canonifyurls = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$","_cache$"]
 enableEmoji = true
-footnotereturnlinkcontents = "↩"
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
-relativeurls = true
 
-# Enable comments by entering your Disqus shortname
-# disqusShortname = "choyang"
+# Disqus Username
+# disqusShortname = "disqus_shortname"
 
-# Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = ""
+# Google Analytics UA number
+# googleAnalytics = "UA-XXXXXXXX-X"
 
-# Default language to use (if you setup multilingual support)
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+# Copyright of your post
+copyright = "©Blog|德宏 All rights reserved. "
 
-[blackfriday]
-  hrefTargetBlank = true
-
-[params]
-  name = "Hongde Wan"
-  organization = "weihai"
-  organization_url = ""
-  avatar = "choyang.jpg"
-  email = "1126714486@qq.com"
-  # address = "TianJin, China"
-  # office_hours = "08:00 to 09:00 or email for appointment"
-  phone = ""
-  skype = ""
-  telegram = ""
-
-  # Enable Keybase in Contact section by entering your keybase.io username.
-  keybase = ""
-
-  # Date format (refer to Go's date format: http://flippinggodateformat.com )
-  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
-  date_format = "Mon, Jan 2, 2006"
-
-  # Enable global LaTeX math rendering?
-  #   If false, you can enable it locally on a per page basis.
-  math = false
-
-  # Highlight.js options
-  #   highlight
-  #     Enable global source code highlighting?  If false, you can
-  #     override it for a particular page in that page's preamble.
-  #
-  #     Example: highlight = true
-  #
-  #   highlight_languages
-  #     Add support for highlighting additional languages. Support for
-  #     languages mentioned here will be included in all pages. You
-  #     can also set this variable for a particular page in that
-  #     page's preamble.
-  #
-  #     Example: highlight_languages = ["go", "lisp", "ocaml"]
-  #
-  #   highlight_style
-  #     Choose a different CSS style for highlighting source
-  #     code. Setting this option in a page's preamble has no
-  #     effect.
-  #
-  #     Example: highlight_style = "github-gist"
-  #
-  #   highlight_version
-  #     Choose the version of highlight.js you want. Setting this
-  #     option in a page's preamble has no effect.
-  #
-  #     Example: highlight_version = "9.9.0"
-  #
-  #   For the list of supported languages, styles, and versions, see:
-  #   https://cdnjs.com/libraries/highlight.js/
-  #
-  #   For more info on the highlighting options, see:
-  #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
-  highlight = true
-  highlight_languages = []
-  # highlight_style = "github"
-  # highlight_version = "9.9.0"
-
-  # Enable native social sharing buttons?
-  sharing = true
-
-  # Link custom CSS and JS assets
-  #   (relative to /static/css and /static/js respectively)
-  custom_css = ["custom.css"]
-  custom_js  = []
-
-  # Publication types.
-  #   Used to categorize publications.
-  #   The index of the publication type in the list is used as its unique numerical identifier.
-  #   The numeric ID is used in a publication's frontmatter to categorize it.
-  #   The language can be edited below.
-  #   For multi-lingual sites, copy this block to each language section at the end of this file.
-  publication_types = [
-    'Uncategorized',  # 0
-    'Conference proceedings',  # 1
-    'Journal',  # 2
-    'Work in progress',  # 3
-    'Technical report',  # 4
-    'Book',  # 5
-    'Book chapter'  # 6
-  ]
-
-  # Social/Academic Networking
-  #
-  # Icon pack "fa" includes the following social network icons:
-  #
-  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
-  #   youtube, instagram, soundcloud
-  #
-  #   For email icon, use "fa" icon pack, "envelope" icon, and
-  #   "mailto:your@email.com" as the link.
-  #
-  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
-  #
-  # Icon pack "ai" includes the following academic network icons:
-  #
-  #   google-scholar, arxiv, orcid, researchgate, mendeley
-  #
-  #   Full list: https://jpswalsh.github.io/academicons/
-
-  [[params.social]]
-    icon = "envelope"
-    icon_pack = "fa"
-    link = "mailto:yiluheihei@gmail.com"
-
-  [[params.social]]
-    icon = "twitter"
-    icon_pack = "fa"
-    link = ""
-
-
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "//https://github.com/Dehong1"
-    
-[Languages.en.params]
-  name = "Hongde Wan"
-  role = "student"
-  
-[Languages.zh.params]
-  name = "万德宏"
-
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by 
-#   the filename of the desired widget in your `content/home/` folder.
-#   The weight parameter defines the order that the links will appear in.
-
-# Configure the English version of the website.
-
-[[Languages.en.menu.main]]
-  name = "Home"
-  url = "#about"
-  weight = 1
-  
-[[Languages.en.menu.main]]
-  name = "Post"
-  url = "#posts"
-  weight = 2
-
-[[Languages.en.menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 3
-
-[[Languages.en.menu.main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 4
-
-## 中文入口
-  
-[[Languages.zh.menu.main]]
+# Initial site menu, you can extend menu with content.
+[[menu.main]]
   name = "首页"
-  url = "#about"
-  weight = 1
-  
-[[Languages.zh.menu.main]]
-  name = "日志"
-  url = "#posts"
-  weight = 2
+  weight = 10
+  identifier = "home"
+  url = "/"
 
-[[Languages.zh.menu.main]]
-  name = "读书笔记"
-  url = "#read"
-  weight = 3
-  
-[[Languages.zh.menu.main]]
-  name = "笔记"
-  url = "#publications"
-  weight = 4
-  
-# Taxonomies.
-[taxonomies]
-  tag = "tags"
-  category = "categories"
-  publication_type = "publication_types"
+[[menu.main]]
+  name = "博客"
+  weight = 20
+  identifier = "works"
+  url = "https://jiandanblog.netlify.com/"
 
-# multiple language 
-[Languages.en]
-  languageCode = "en-us"
-[Languages.zh]
-  languageCode = "zh-cn"
+# Add your own params here
+[params]
+  author = "德宏"
+  avatar = "/img/avatar.jpg" 
+  seotitle = "Blog|德宏"
+  subtitle = "~ 带着爱和梦想生活 ~"
+  description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
+  paginate = 10
+
+  # Choose your social networks
+  email = "1126714486@qq.com"
+  github = "Dehong1"
+   #twitter = "/"
+   #linkedin = "/"
+  weibo = "/"
+  wechat= "/img/qrcode.jpg/" # Replace with your wechat qrcode image
+  # facebook = "facebook_username"
+  # google = "googlplus_id_number"
+  # instagram = "instagram_username"
+  # youtube = "youtube_username"
+  # vimeo = "vimeo_username"
+  # medium = "medium_username"
+  # quora = "quora_username"
+  # pinterest = "pinterest_username"
+  # dribbble = "dribbble_username"
+  # behance = "behance_username"
+  # jsfiddle = "jsfiddle_username"
+  # codepen = "codepen_username"
+  # zhihu = "zhihu_username"
+  # douban = "douban_username"
+  # bilibili = "bilibili_id_number"
+
+  # Changyan Comments (China Only)
+    changyan = true
+    changyanId = "cytkoYA6X"
+    changyanConf = "81c732dc10bd6e29b8f4208b6377e150"
+
+  # Google Webmaster
+  # https://www.google.com/webmasters/
+  # googleSiteVerification = "_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc"
+
+  # Bing Webmaster
+  # https://www.bing.com/toolbox/webmaster/
+  # msValidate = "22596E34341DD1D17D6022C44647E587"
+
+  # Baidu Webmaster (China Only)
+  # https://zhanzhang.baidu.com/
+  # baiduSiteVerification = "MZ23SPxxfa"
+
+  # Sogou Webmaster (China Only)
+  # http://zhanzhang.sogou.com/
+  # sogouSiteVerification = "m2jktMQTZm"
+
+  # 360 Webmaster (China Only)
+  # http://zhanzhang.so.com/
+  # soSiteVerification = "b7ab3b4c2edbc856642004d1b8c27a91"
+
+  # Baidu Tongji (China Only)
+  # https://tongji.baidu.com/
+    baiduTongji = "19fbec944977a82f7082273dd3e41091"
+
+  # ICP Number (China Only)
+  # ICP = "鲁ICP备16005986号-2"
