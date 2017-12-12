@@ -30,7 +30,7 @@ copyright = "©Blog|德宏 All rights reserved. "
   name = "博客"
   weight = 20
   identifier = "works"
-  url = "https://jiandanblog.netlify.com/"
+  url = "https://dehongblog1.netlify.com/"
 
 # Add your own params here
 [params]

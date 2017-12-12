@@ -1,0 +1,51 @@
+---
+title: 中国与国际债券市场之间的关系
+author: 德宏
+date: '2017-12-08'
+slug: 中国与国际债券市场之间的关系
+isCJKLanguage: true
+autoThumbnailImage: true
+thumbnailImagePosition: "top"
+thumbnailImage: 
+coverImage: 
+categories:
+  - my work
+tags:
+  - 金融计量
+---
+
+
+
+<div id="r" class="section level5">
+<h5>用R对数据进行初步处理</h5>
+<blockquote>
+<p>数据是来自彭博巴克莱指数系列的各国国债指数，节假日没有数据，用Excel补全日期，再用Vlookupj将已得数据与日期对应到一个sheet中，用R中zoo包中的na.fill（）取相邻数据的均值填充（ts似乎只能生成月度数据，用筛选，查找，替换在excel中确定缺失值）</p>
+</blockquote>
+<pre class="r"><code>directory2&lt;-&quot;C:/Users/nsus/Desktop/指数数据全序列(调整汇率R).csv&quot;
+#指定文件路径，含字符时要加“”
+index_data &lt;-read.csv(directory2,sep=&quot;,&quot;,header = TRUE)#读入数据
+index_data1&lt;-as.data.frame(index_data)#转化为数据框
+library(zoo)
+index_data1&lt;-as.zoo(index_data)#用zoo包转化数据类型
+index_data1&lt;-na.fill(index_data1, &quot;extend&quot;) #缺失值扩展均值填充
+index_data2&lt;-as.data.frame(index_data1)#转化为数据框
+x.Date &lt;- as.Date(&quot;2011-09-01&quot;) + c(1:2220)#指定数据日期索引
+index_data3&lt;-zoo(index_data2,x.Date)#转化数据类型
+index_data4&lt;-log(index_data3)#取对数
+index_data5&lt;-diff(index_data4)#差分
+plot(index_data5,main =&quot;中国、日本、美国、英国、德国国债指数对数收益率时间序列图&quot;,xlab=&quot;time&quot;)#绘制时序图</code></pre>
+<p><img src="/post/2017-12-08-中国与国际债券市场之间的关系_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>index_data6&lt;-as.data.frame(index_data5)#转化数据类型
+write.table(index_data6,file=&quot;C:/Users/nsus/Desktop/指数数据全序列无日期(对数差分处理+汇率调整).csv&quot;,sep=&quot;,&quot;,col.names = TRUE,row.names=F)#导出数据</code></pre>
+</div>
+<div id="eviewsvar" class="section level5">
+<h5>用Eviews建立进行VAR模型</h5>
+<p>1.ADF检验</p>
+<p>2.用信息准则确定滞后阶数</p>
+<p>3.格兰杰因果检验</p>
+<p>4.方差分解</p>
+<p>5.脉冲响应函数</p>
+</div>
+<div class="section level5">
+<h5>结论</h5>
+</div>
