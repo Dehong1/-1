@@ -1,0 +1,29 @@
+---
+title: 学R第一天
+author: 德宏
+date: '2017-12-05'
+slug: 学r第一天
+comments: false
+isCJKLanguage: true
+categories:
+  - R
+tags:
+  - ggplot
+---
+ 
+<img src="https://source.unsplash.com/user/erondu/1600x900">
+
+* demo演示
+
+> R可以构建复杂的立体图形
+  结合ggplot2绘制的图形更加精美
+
+<!--more-->
+
+ 
+```{r echo=TRUE, warning=FALSE}
+
+demo(persp)
+
+```
+

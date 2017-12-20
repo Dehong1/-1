@@ -1,4 +1,4 @@
-baseURL = "https://dehong.rbind.io/"
+baseURL = "https://dehongblog1.netlify.com/"
 LanguageCode = "zh-CN"
 HasCJKLanguage = true
 title = " DeHong.Website "
@@ -30,7 +30,7 @@ copyright = "©Blog|德宏 All rights reserved. "
   name = "博客"
   weight = 20
   identifier = "works"
-  url = "https://dh.netlify.com/"
+  url = "https://dehong.rbind.io/"
 
 # Add your own params here
 [params]

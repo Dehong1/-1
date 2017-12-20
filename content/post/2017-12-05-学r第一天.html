@@ -1,0 +1,143 @@
+---
+title: 学R第一天
+author: 德宏
+date: '2017-12-05'
+slug: 学r第一天
+comments: false
+isCJKLanguage: true
+categories:
+  - R
+tags:
+  - ggplot
+---
+
+
+
+<p><img src="https://source.unsplash.com/user/erondu/1600x900"></p>
+<ul>
+<li>demo演示</li>
+</ul>
+<blockquote>
+<p>R可以构建复杂的立体图形 结合ggplot2绘制的图形更加精美</p>
+</blockquote>
+<!--more-->
+<pre class="r"><code>demo(persp)</code></pre>
+<pre><code>## 
+## 
+##  demo(persp)
+##  ---- ~~~~~
+## 
+## &gt; ### Demos for  persp()  plots   -- things not in  example(persp)
+## &gt; ### -------------------------
+## &gt; 
+## &gt; require(datasets)
+## 
+## &gt; require(grDevices); require(graphics)
+## 
+## &gt; ## (1) The Obligatory Mathematical surface.
+## &gt; ##     Rotated sinc function.
+## &gt; 
+## &gt; x &lt;- seq(-10, 10, length.out = 50)
+## 
+## &gt; y &lt;- x
+## 
+## &gt; rotsinc &lt;- function(x,y)
+## + {
+## +     sinc &lt;- function(x) { y &lt;- sin(x)/x ; y[is.na(y)] &lt;- 1; y }
+## +     10 * sinc( sqrt(x^2+y^2) )
+## + }
+## 
+## &gt; sinc.exp &lt;- expression(z == Sinc(sqrt(x^2 + y^2)))
+## 
+## &gt; z &lt;- outer(x, y, rotsinc)
+## 
+## &gt; oldpar &lt;- par(bg = &quot;white&quot;)
+## 
+## &gt; persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = &quot;lightblue&quot;)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre><code>## 
+## &gt; title(sub=&quot;.&quot;)## work around persp+plotmath bug
+## 
+## &gt; title(main = sinc.exp)
+## 
+## &gt; persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = &quot;lightblue&quot;,
+## +       ltheta = 120, shade = 0.75, ticktype = &quot;detailed&quot;,
+## +       xlab = &quot;X&quot;, ylab = &quot;Y&quot;, zlab = &quot;Z&quot;)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre><code>## 
+## &gt; title(sub=&quot;.&quot;)## work around persp+plotmath bug
+## 
+## &gt; title(main = sinc.exp)
+## 
+## &gt; ## (2) Visualizing a simple DEM model
+## &gt; 
+## &gt; z &lt;- 2 * volcano        # Exaggerate the relief
+## 
+## &gt; x &lt;- 10 * (1:nrow(z))   # 10 meter spacing (S to N)
+## 
+## &gt; y &lt;- 10 * (1:ncol(z))   # 10 meter spacing (E to W)
+## 
+## &gt; persp(x, y, z, theta = 120, phi = 15, scale = FALSE, axes = FALSE)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<pre><code>## 
+## &gt; ## (3) Now something more complex
+## &gt; ##     We border the surface, to make it more &quot;slice like&quot;
+## &gt; ##     and color the top and sides of the surface differently.
+## &gt; 
+## &gt; z0 &lt;- min(z) - 20
+## 
+## &gt; z &lt;- rbind(z0, cbind(z0, z, z0), z0)
+## 
+## &gt; x &lt;- c(min(x) - 1e-10, x, max(x) + 1e-10)
+## 
+## &gt; y &lt;- c(min(y) - 1e-10, y, max(y) + 1e-10)
+## 
+## &gt; fill &lt;- matrix(&quot;green3&quot;, nrow = nrow(z)-1, ncol = ncol(z)-1)
+## 
+## &gt; fill[ , i2 &lt;- c(1,ncol(fill))] &lt;- &quot;gray&quot;
+## 
+## &gt; fill[i1 &lt;- c(1,nrow(fill)) , ] &lt;- &quot;gray&quot;
+## 
+## &gt; par(bg = &quot;lightblue&quot;)
+## 
+## &gt; persp(x, y, z, theta = 120, phi = 15, col = fill, scale = FALSE, axes = FALSE)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<pre><code>## 
+## &gt; title(main = &quot;Maunga Whau\nOne of 50 Volcanoes in the Auckland Region.&quot;,
+## +       font.main = 4)
+## 
+## &gt; par(bg = &quot;slategray&quot;)
+## 
+## &gt; persp(x, y, z, theta = 135, phi = 30, col = fill, scale = FALSE,
+## +       ltheta = -120, lphi = 15, shade = 0.65, axes = FALSE)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<pre><code>## 
+## &gt; ## Don&#39;t draw the grid lines :  border = NA
+## &gt; persp(x, y, z, theta = 135, phi = 30, col = &quot;green3&quot;, scale = FALSE,
+## +       ltheta = -120, shade = 0.75, border = NA, box = FALSE)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+<pre><code>## 
+## &gt; ## `color gradient in the soil&#39; :
+## &gt; fcol &lt;- fill ; fcol[] &lt;- terrain.colors(nrow(fcol))
+## 
+## &gt; persp(x, y, z, theta = 135, phi = 30, col = fcol, scale = FALSE,
+## +       ltheta = -120, shade = 0.3, border = NA, box = FALSE)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+<pre><code>## 
+## &gt; ## `image like&#39; colors on top :
+## &gt; fcol &lt;- fill
+## 
+## &gt; zi &lt;- volcano[ -1,-1] + volcano[ -1,-61] +
+## +            volcano[-87,-1] + volcano[-87,-61]  ## / 4
+## 
+## &gt; fcol[-i1,-i2] &lt;-
+## +     terrain.colors(20)[cut(zi,
+## +                            stats::quantile(zi, seq(0,1, length.out = 21)),
+## +                            include.lowest = TRUE)]
+## 
+## &gt; persp(x, y, 2*z, theta = 110, phi = 40, col = fcol, scale = FALSE,
+## +       ltheta = -120, shade = 0.4, border = NA, box = FALSE)</code></pre>
+<p><img src="/post/2017-12-05-学r第一天_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+<pre><code>## 
+## &gt; ## reset par():
+## &gt; par(oldpar)</code></pre>
