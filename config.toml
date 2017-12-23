@@ -32,7 +32,7 @@ copyright = "©Blog|德宏 All rights reserved. "
   identifier = "works"
   url = "https://dehong.rbind.io/"
   [[menu.main]]
-  name = "Tags"
+  name = "标签"
   weight = 30
   identifier = "tags"
   url = "/tags"
