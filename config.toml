@@ -31,6 +31,11 @@ copyright = "©Blog|德宏 All rights reserved. "
   weight = 20
   identifier = "works"
   url = "https://dehong.rbind.io/"
+  [[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags"
 
 # Add your own params here
 [params]
