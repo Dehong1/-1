@@ -3,6 +3,7 @@ LanguageCode = "zh-CN"
 HasCJKLanguage = true
 title = " DeHong.Website "
 theme = "hugo-nuo" 
+relativeurls = true
 enableRobotsTXT = true
 pygmentsuseclasses = true
 PygmentsCodeFences = true
@@ -24,7 +25,7 @@ copyright = "©Blog|德宏 All rights reserved. "
   name = "首页"
   weight = 10
   identifier = "home"
-  url = "/"
+  url = "/post/"
 
 [[menu.main]]
   name = "博客"

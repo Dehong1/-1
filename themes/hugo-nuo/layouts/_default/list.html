@@ -10,6 +10,7 @@
   <section class="main post-list">
     <header class="list-header offscreen">
       <h2 class="list-label">Posts List</h2>
+      
     </header>
     {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 10) }}
     {{ if ne $paginator.TotalPages 0 }}
@@ -20,10 +21,12 @@
       <p>There's nothing here.<br>Create an interesting post with the command:</p>
       <p><code>$ hugo new post/hello-world.md</code></p>
     {{ end }}
+    
     {{ if gt $paginator.TotalPages 1 }}
       <footer class="list-footer">
         <nav class="pagination">
           <h3 class="offscreen">Pagination</h3>
+          
           {{ if $paginator.HasPrev }}
             <a class="pagination-previous" href="{{ $paginator.Prev.URL }}">← Newer Posts</a>
           {{ end }}
@@ -34,5 +37,6 @@
       </footer>
     {{ end }}
   </section>
+  
   {{ partial "footer.html" . }}
 {{ end }}
