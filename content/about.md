@@ -5,7 +5,7 @@ layout: "about"
 menu: "main"
 weight: 40
 comments: true
-isCJKLanguage: true
+
 ---
 
 
