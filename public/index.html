@@ -1,91 +1,257 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <title>欢迎光临，点击龙猫进入</title>
 	<meta name="generator" content="Hugo 0.30.2" />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="15;url= https://dehongblog1.netlify.com/post/"> 
-   <title>blog|德宏</title>
+<style>
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    color: #B0E2FF;
+}
 
-  <link rel="stylesheet" href="css/normalize.css">
+.info {
+    
+   position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 5px 15px;
+    color: red;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, .5);
+    font-family: "楷体";
+}
 
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+.logo{
+  animation-delay: 0.7s;
+ position: absolute;
+    top: 5px;
+    left: 26%;
+  
+  color: #eee;
+  vertical-align:middle;
+  z-index:10;
+   
+  
+   
+   
+    width: 20%;
+   
+   
+   
 
+   
+   
+   
+ 
+}
+
+
+html, body {
+  margin:0;
+  padding:0;
+  background: #B0E2FF;
+  line-height: 0.5em;
+  z-index:1;
+  text-align: center;
+}
+
+
+img{
+  transform: scale(1);
+   transition: .5s
+    
+    
+}
+
+img:hover {
+    -webkit-filter: sepia(0);
+     filter: sepia(0);
+      -webkit-transform: scale(2.25);
+     transform: scale(2.25);
+     
+     
+      
+      
+      
+     transition: .5s
+        
+   
+
+
+
+
+
+}
+
+ .border{
+            position: absolute;
+            top:30px;
+            left: 40%;
+            right: 60%;
+            width: 600px;
+            height:500px;
+            margin:80px 0 0 -200px;
+            border:4px solid  	DarkOrange;
+            border-radius: 20px;
+            box-shadow: 0px 5px 20px #555;
+            background: url(https://s1.ax1x.com/2018/01/15/pNLUFH.jpg) no-repeat;
+
+        }
+.descrption{
+            position: absolute;
+            left: 40%;
+            right: 60%;
+            width: 600px;
+            height:100px;
+            margin:420px 0 0 -200px;
+             
+            text-align: center;
+            font-size: 18px;
+            font-family: "楷体";
+             color:  	black;
+            top:90px;
+            border:4px solid DarkOrange;
+            border-radius: 20px;
+            background-color:PapayaWhip;
+            
+          
+        }
+        
+        
+.ball{
+            position: absolute;
+            left: 8%;
+            top: 60px;
+            
+           
+
+}
+
+        
+.frontcontent{
+   position: absolute;
+     bottom：600px;
+    left: 40%;
+
+  font-family: "楷体"; 
+  color:red;
+  font-size: 1.5em;
+  z-index:10;
+
+    
+     
+     
+   
+  width: max-content;
+  animation-delay: 0.7s;
+}
+
+
+
+.fade-in {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fade-in.one {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+.fade-in.two {
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+</style>
 </head>
-
 <body>
-<center>
-  
-<div class="logo fade-in one">
-  
-  <h2> 欢迎光临！</h2>
+
+
+
+<canvas id="c"></canvas>
+
+
+<div class="border">
+ 
+
+
+    </div>
+ <div class="descrption">
+ 
+<h4>哭着来，笑着去；相似相续，非断非常；不为风雨阻，万物落眼帘；
+<p>梅花寒香宝剑锋，至今犹存凌云志</h4>
+
+    </div>
+
+
+<section class="frontface">
+   
+  <div class="frontcontent  fade-in one" id="sourrounding_div">    
+
+
+<h4>  ♪♥♪ ♪ ♪ ♪ ♪ ♪♥♪   </h4>
+
+<div class="logo fade-in two">
 
   <a  href="./post/">
 
-  <img src="https://s1.ax1x.com/2018/01/01/pS4RRU.png" >
+  <img src="https://s1.ax1x.com/2018/01/01/pS4xLd.png" >
 
   </a>
 
-
-</div>
-</center>
-<div style="text-align:center;clear:both;position:absolute;top:0;left:260px">
-<script src="./gg_bd_ad_720x90.js" type="text/javascript"></script>
-<script src="./follow.js" type="text/javascript"></script>
-</div>
-<canvas class="canvas"></canvas>
-
-<div class="help">?</div> 
-
-<div class="ui">
-  <input class="ui-input" type="text" />
-  <span class="ui-return">↵</span>
 </div>
 
-<div class="overlay">
-  <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span class="tabs-label">Share</span></div>
-
-    <div class="tabs-panels">
-      <ul class="tabs-panel commands">
-        <li class="commands-item"><span class="commands-item-title">Text</span><span class="commands-item-info" data-demo="Hello :)">Type anything</span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Countdown</span><span class="commands-item-info" data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Time</span><span class="commands-item-info" data-demo="#time">#time</span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Rectangle</span><span class="commands-item-info" data-demo="#rectangle 30x15">#rectangle<span class="commands-item-mode">width x height</span></span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Circle</span><span class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span class="commands-item-action">Demo</span></li>
-
-        <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
-      </ul>
-
-      <div class="tabs-panel ui-details">
-        <div class="ui-details-content">
-          <h1>这是我拷贝别人的一个黑科技</h1>
-           <h1>点击可爱的龙猫，或等几秒钟都可进入！</h1>
-          <p>
-           你可以输入随意英文观看动态效果<br/>
-            我的博客<a href="blog/">https://dehong.rbind.io/</a>
-          </p>
-			<br/>
-        </div>
-      </div>
-
-      <div class="tabs-panel ui-share">
-        <div class="ui-share-content">
-          <h1>Sharing</h1>
-          <p>Simply add <em>?a=</em> to the current URL to share any static or animated text. Examples:</p>
-          <p>
-            <a href="http://www.kennethcachia.com/shape-shifter?a=Hello" target="_blank">www.kennethcachia.com/shape-shifter?a=Hello</a><br/>
-            <a href="http://www.kennethcachia.com/shape-shifter?a=Hello|#countdown 3" target="_blank">www.kennethcachia.com/shape-shifter?a=Hello|#countdown 3</a>
-          </p>
-        </div>
-      </div>
-    </div>
+<div class="ball">
+  
+<script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0w667g1hm67&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;s=170" async="async"></script>
+    
   </div>
-</div>
 
-  <script src="js/index.js"></script>
+</section>
+
+
+
+
+
+
+
+ 
+
+
+<script src='https://d33wubrfki0l68.cloudfront.net/bundles/e3184789e773cc0585ae868965f07b3549ab724e.js'></script>
+
+</script>
 
 </body>
-
 </html>
